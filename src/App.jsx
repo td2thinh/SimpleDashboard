@@ -1,19 +1,46 @@
 import './App.css';
-import { Grid, Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Gauge from './components/Gauge';
 import Client from './components/Client';
+
+const gridTemplate = `
+  "gauge client"
+  "gauge client"
+  "gauge client"
+  "gauge client"
+  "map client"
+  "map client"
+  "map client"
+  "map stats"
+  "map stats"
+  "map stats"
+  "map stats"
+  "map stats"
+`
 function App() {
   return (
     <Container sx={{ padding: 10 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+      <Box width="100%" height="100%" display="grid"
+        gap="1.5rem"
+        sx={{
+          gridTemplate: gridTemplate,
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gridTemplateRows: "repeat(2, 1fr)",
+        }}>
+        <Box sx={{ gridArea: "gauge" }}>
           <Gauge />
-        </Grid>
-        <Grid item xs={12} md={6}>
+        </Box>
+        <Box sx={{ gridArea: "client" }}>
           <Client />
-        </Grid>
-      </Grid>
-    </Container>
+        </Box>
+        <Box sx={{ gridArea: "map" }}>
+          <Client />
+        </Box>
+        <Box sx={{ gridArea: "stats" }}>
+          <Gauge />
+        </Box>
+      </Box>
+    </Container >
   );
 }
 

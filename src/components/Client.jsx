@@ -12,17 +12,17 @@ import IconButton from '@mui/material/IconButton';
 const Client = () => {
     return (
         <>
-            <Paper elevation={3} sx={{ maxHeight: 400, overflow: 'auto' }} >
+            <Paper elevation={3}>
                 <Typography padding={2} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     CLIENTS
                 </Typography>
-                <List>
+                <List sx={{ maxHeight: 400, overflow: 'auto' }} >
                     {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((value) => {
                         return (
-                            <Grid container container direction="row" alignItems="center">
+                            <Grid container direction="row" alignItems="center">
                                 <ListItem
                                     secondaryAction={
-                                        <Grid container container direction="row" alignItems="center">
+                                        <Grid container direction="row" alignItems="center">
                                             <Typography sx={{ fontSize: 15 }}>
                                                 19%
                                             </Typography>
