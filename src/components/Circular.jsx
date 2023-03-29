@@ -1,7 +1,6 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { max } from 'd3';
 
 
 const Circular = (props) => {
