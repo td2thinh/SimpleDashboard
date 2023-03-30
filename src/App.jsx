@@ -3,20 +3,21 @@ import { Box, Container, useMediaQuery } from "@mui/material";
 import Gauge from './components/Gauge';
 import Client from './components/Client';
 import Tableau from './components/Tableau';
+import Carte from './components/Carte';
 
 const gridTemplate = `
   "gauge client"
   "gauge client"
-  "gauge client"
-  "gauge client"
   "map client"
   "map client"
   "map client"
+  "map client"
+  "map client"
   "map stats"
   "map stats"
   "map stats"
-  "map stats"
-  "map stats"
+  "map space"
+  "map space"
 `
 
 const gridTemplateSmallScreen = `
@@ -49,9 +50,9 @@ const gridTemplateSmallScreen = `
 const App = () => {
   const isBigScreen = useMediaQuery('(min-width: 1200px)');
   return (
-    <Container sx={{ padding: 10 }}>
+    <Container sx={{ padding: 4 }}>
       <Box width="100%" height="100%" display="grid"
-        gap="1.5rem"
+        gap="2rem"
         sx={
           isBigScreen ? {
             gridTemplateAreas: gridTemplate,
@@ -63,14 +64,14 @@ const App = () => {
               gridAutoColumns: "1fr",
               gridAutoRows: "1fr",
             }}>
-        <Box sx={{ gridArea: "gauge" }}>
+        <Box sx={{ gridArea: "gauge", height: 200 }}>
           <Gauge />
         </Box>
         <Box sx={{ gridArea: "client" }}>
           <Client />
         </Box>
         <Box sx={{ gridArea: "map" }}>
-          <Client />
+          <Carte />
         </Box>
         <Box sx={{ gridArea: "stats" }}>
           <Tableau />

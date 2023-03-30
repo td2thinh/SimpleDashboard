@@ -32,7 +32,16 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.leaflet-container {
+  height: 320px;
+  width: 480px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
 }
