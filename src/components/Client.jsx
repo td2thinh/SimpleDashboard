@@ -16,7 +16,7 @@ const Client = () => {
                 <Typography padding={2} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     CLIENTS
                 </Typography>
-                <List sx={{ maxHeight: 400, overflow: 'auto' }} >
+                <List sx={{ maxHeight: 300, overflow: 'auto' }} >
                     {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((value) => {
                         return (
                             <Grid container direction="row" alignItems="center">

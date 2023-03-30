@@ -2,6 +2,7 @@ import './App.css';
 import { Box, Container, useMediaQuery } from "@mui/material";
 import Gauge from './components/Gauge';
 import Client from './components/Client';
+import Tableau from './components/Tableau';
 
 const gridTemplate = `
   "gauge client"
@@ -10,7 +11,7 @@ const gridTemplate = `
   "gauge client"
   "map client"
   "map client"
-  "map stats"
+  "map client"
   "map stats"
   "map stats"
   "map stats"
@@ -53,7 +54,7 @@ const App = () => {
         gap="1.5rem"
         sx={
           isBigScreen ? {
-            gridTemplate: gridTemplate,
+            gridTemplateAreas: gridTemplate,
             gridTemplateColumns: "repeat(2, 1fr)",
             gridTemplateRows: "repeat(2, 1fr)",
           }
@@ -72,7 +73,7 @@ const App = () => {
           <Client />
         </Box>
         <Box sx={{ gridArea: "stats" }}>
-          <Gauge />
+          <Tableau />
         </Box>
       </Box>
     </Container >
